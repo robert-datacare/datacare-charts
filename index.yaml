@@ -85,7 +85,7 @@ entries:
     description: A Helm chart for Kubernetes
     digest: f392b9c25c3832f11713ed02334dec2c37872fe52d74239b4b395273140778cf
     icon: https://robert-datacare.github.io/charts/logo.png
-    name: Datacare Chart
+    name: 01 Datacare Chart
     type: application
     urls:
     - assets/datacare-chart/datacare-chart-0.4.0.tgz
@@ -96,7 +96,7 @@ entries:
     description: A Helm chart for Kubernetes
     digest: f392b9c25c3832f11713ed02334dec2c37872fe52d74239b4b395273140778cf
     icon: assets/clearml/clearml.png
-    name: ClearMl
+    name: ClearML
     type: application
     urls:
     - assets/clearml/clearml-7.2.2.tgz
