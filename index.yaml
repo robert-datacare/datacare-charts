@@ -93,10 +93,12 @@ entries:
   clearml:
   - apiVersion: v2
     appVersion: 7.2.2
+  - annotations:
+     catalog.cattle.io/display-name: ClearML
     description: A Helm chart for Kubernetes
     digest: f392b9c25c3832f11713ed02334dec2c37872fe52d74239b4b395273140778cf
     icon: assets/clearml/clearml.png
-    name: ClearML
+    name: clearml
     type: application
     urls:
     - assets/clearml/clearml-7.2.2.tgz
@@ -107,7 +109,7 @@ entries:
     description: A Helm chart for Kubernetes
     digest: f392b9c25c3832f11713ed02334dec2c37872fe52d74239b4b395273140778cf
     icon: assets/clearml/clearml.png
-    name: ClearML Agent
+    name: ClearML-Agent
     type: application
     urls:
     - assets/clearml/clearml-agent-5.1.0.tgz
