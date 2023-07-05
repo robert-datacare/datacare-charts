@@ -95,7 +95,7 @@ entries:
     appVersion: 7.2.2
     description: A Helm chart for Kubernetes
     digest: f392b9c25c3832f11713ed02334dec2c37872fe52d74239b4b395273140778cf
-    icon: https://robert-datacare.github.io/charts/logo.png
+    icon: assets/clearml/clearml.png
     name: clearml
     type: application
     urls:
