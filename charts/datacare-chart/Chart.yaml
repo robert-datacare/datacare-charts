@@ -1,0 +1,7 @@
+apiVersion: v2
+appVersion: 0.4.0
+description: A Helm chart for Kubernetes
+icon: https://robert-datacare.github.io/datacare-chart/logo.png
+name: datacare-chart
+type: application
+version: 0.4.0
