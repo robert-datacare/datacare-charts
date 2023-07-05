@@ -79,6 +79,15 @@ entries:
     urls:
     - assets/datawiza/access-broker-0.1.1.tgz
     version: 0.1.1
+  datacare-chart:
+    apiVersion: v2
+    appVersion: 0.4.1
+    description: description here
+    name: datacare-chart
+    type: application
+    urls:
+    - assets/datacare-chart/datacare-chart-0.4.0.tgz
+    version: 0.4.1
   airflow:
   - annotations:
       catalog.cattle.io/certified: partner
