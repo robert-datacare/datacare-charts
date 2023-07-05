@@ -1183,7 +1183,6 @@ entries:
     version: 13.1.7
   ambassador:
   - annotations:
-      catalog.cattle.io/certified: partner
       catalog.cattle.io/display-name: Ambassador Edge Stack
       catalog.cattle.io/release-name: ambassador
     apiVersion: v1
