@@ -83,7 +83,7 @@ entries:
   - apiVersion: v2
     appVersion: 0.4.0
     - annotations:
-     catalog.cattle.io/display-name: 01 Datacare Chart
+     catalog.cattle.io/display-name: 01-Datacare-Chart
     description: A Helm chart for Kubernetes
     digest: f392b9c25c3832f11713ed02334dec2c37872fe52d74239b4b395273140778cf
     icon: https://robert-datacare.github.io/charts/logo.png
@@ -109,7 +109,7 @@ entries:
   - apiVersion: v2
     appVersion: 5.1.0
     - annotations:
-     catalog.cattle.io/display-name: ClearML Agent
+     catalog.cattle.io/display-name: ClearML-Agent
     description: A Helm chart for Kubernetes
     digest: f392b9c25c3832f11713ed02334dec2c37872fe52d74239b4b395273140778cf
     icon: assets/clearml/clearml.png
