@@ -1,0 +1,48 @@
+# Default values for deployer.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+persistentVolume:
+  create: true
+  name: pv
+  storageClassName: longhorn
+  accessModes: ReadWriteMany
+  size: 20
+#accessmodes possible, ReadWriteOnce is read write single node, ReadWriteMany is read write many node
+deployments:
+  deployment1:
+    ingress:
+      domain: "thedatacare.app"
+    image:
+      repository: ""
+      pullPolicy: IfNotPresent
+      # Overrides the image tag whose default is the chart appVersion.
+      tag: "latest"
+    replicaCount: 1
+    service:
+      name: ""
+      type: ClusterIP
+      port: ""
+      protocol: TCP
+    pvc:
+      mount: /pvc
+    resources:
+      limits:
+        gpus: 1
+  deployment2:
+    ingress:
+      domain: "thedatacare.app"
+    install: false
+    image:
+      repository: ""
+      pullPolicy: IfNotPresent
+      # Overrides the image tag whose default is the chart appVersion.
+      tag: "latest"
+    replicaCount: 1
+    service:
+      name: ""
+      type: ClusterIP
+      port: ""
+      protocol: TCP
+    pvc:
+      mount: /pvc

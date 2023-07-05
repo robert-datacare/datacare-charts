@@ -1,0 +1,102 @@
+categories:
+  - deployment
+questions:
+- variable: persistentVolume.create
+  label: 1.0 PERSISTENT VOLUMES (PV)
+  description: ""
+  type: boolean
+- variable: persistentVolume.name
+  label: 1.1. PV Name
+  description: "enter volume name to append to appname-*volumename*"
+  type: string
+- variable: persistentVolume.size
+  default: 20
+  label: 1.2. PV Size
+  description: "enter volume size in GIB"
+  type: int
+- variable: persistentVolume.accessModes
+  label: 1.3. PV Type
+  description: "enter volume type"
+  type: enum
+  default: "ReadWriteMany"
+  options:
+  - "ReadWriteOnce"
+  - "ReadWriteMany"
+  
+  
+- variable: fake.var2
+  label: 2.0. GPU Deployment (DP 1)
+  description: ""
+  type: boolean
+  default: true
+- variable: deployments.deployment1.image.repository
+  label: 2.1. DP 1 Image
+  description: "select application to install"
+  type: enum
+  options:
+  - "stable-diffusion:automatic1111-plus"
+  - "stable-diffusion:fast-stable-diffusion-2.1.0"
+  - "stable-diffusion:invokeai"
+  - "stable-diffusion:comfyui"
+  - "stable-diffusion:automatic1111"
+  - "discoart:latest"
+  - "pytorch:1.13.1"
+  - "pytorch:2.0.1"
+  - "tensorflow:latest"
+  - "bittensor:4.0.1"
+  - "bittensor:5.0.0"
+  - "oobabooga:latest"
+  - "cuda:ubuntu-20.04"
+- variable: deployments.deployment1.replicaCount
+  label: 2.2. DP 1 Replicas
+  description: "Enter number of replicas"
+  type: int
+- variable: deployments.deployment1.resources.limits.nvidia.com/gpu
+  label: 2.3. DP 1 Gpus
+  description: "Enter number of gpus to assign per container"
+  type: enum
+  default: 1
+  options:
+  - "1"
+- variable: deployments.deployment1.pvc.mount
+  label: 2.4. DP 1 PV Mount Point
+  description: "Enter path persistent volume will be mounted on"
+  type: string
+- variable: deployments.deployment1.service.name
+  label: 2.5. DP 1 Network Name
+  description: "Enter name to use for network, must be less than 15 characters"
+  required: true
+  type: string
+- variable: deployments.deployment1.service.port
+  label: 2.6. DP 1 Cluster Ip Port
+  description: "Enter port"
+  type: string
+  
+  
+- variable: deployments.deployment2.install
+  label: 3.0. NON GPU Deployment (DP 2)
+  description: "Please select the checkbox if you would like to set up a second application deployment."
+  type: boolean
+- variable: deployments.deployment2.image.repository
+  label: 3.1. DP 2 Image
+  description: "select application to install"
+  type: enum
+  options:
+  - "digikam:latest"
+- variable: deployments.deployment2.replicaCount
+  label: 3.2. DP 2 Replicas
+  description: "Enter number of replicas"
+  type: int
+- variable: deployments.deployment2.pvc.mount
+  label: 3.3. DP 2 PV Mount Point
+  description: "Enter path persistent volume will be mounted on"
+  type: string
+- variable: deployments.deployment2.service.name
+  label: 3.4. DP 2 Network Name
+  description: "Enter name to use for network, must be less than 15 characters"
+  type: string
+  required: true
+- variable: deployments.deployment2.service.port
+  label: 3.5. DP 2 Cluster Ip Port
+  description: "Enter port"
+  type: string
