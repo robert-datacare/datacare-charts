@@ -92,15 +92,15 @@ entries:
     version: 0.4.0
   clearml:
   - apiVersion: v2
-    appVersion: 7.2.2
+    appVersion: 7.2.3
     description: A Helm chart for Kubernetes
     digest: f392b9c25c3832f11713ed02334dec2c37872fe52d74239b4b395273140778cf
     icon: https://robert-datacare.github.io/charts/logo.png
     name: clearml
     type: application
     urls:
-    - assets/clearml/clearml-7.2.2.tgz
-    version: 7.2.2
+    - assets/clearml/clearml-dc-7.2.3.tgz
+    version: 7.2.3
   airflow:
   - annotations:
       catalog.cattle.io/certified: partner
