@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-deployment1
+spec:
+  replicas: {{ .Values.deployments.deployment1.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-deployment1
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-deployment1
+    spec:                 
+      containers:
+        - name: {{ .Release.Name }}-container1
+          image: harbor.secure/repo/{{ .Values.deployments.deployment1.image.repository }}
+          imagePullPolicy: {{ .Values.deployments.deployment1.image.pullPolicy }}
+          ports:
+            - name: {{ .Values.deployments.deployment1.service.name }}
+              containerPort: {{ .Values.deployments.deployment1.service.port }}
+              protocol: {{ .Values.deployments.deployment1.service.protocol }}
+          resources:
+            limits:
+              nvidia.com/gpu: {{ .Values.deployments.deployment1.resources.limits.gpus }}
+          volumeMounts:
+            - name: "mount-{{ .Values.persistentVolume.name}}"
+              mountPath: {{ .Values.deployments.deployment1.pvc.mount }}
+      volumes:
+        - name: "mount-{{ .Values.persistentVolume.name}}"
+          persistentVolumeClaim:
+            claimName: "{{ .Release.Name }}-{{ .Values.persistentVolume.name }}"     

@@ -1,0 +1,14 @@
+{{- if .Values.deployments.deployment2.install }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.deployments.deployment2.service.name }}
+spec:
+  type: {{ .Values.deployments.deployment2.service.type }}
+  ports:
+    - port: 80
+      targetPort: {{ .Values.deployments.deployment2.service.port }}
+      protocol: TCP
+  selector: 
+    app: {{ .Release.Name }}-deployment2
+{{- end }}

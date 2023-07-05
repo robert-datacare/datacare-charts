@@ -1,0 +1,38 @@
+{{- if .Values.deployments.deployment2.install }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-deployment2
+spec:
+  replicas: {{ .Values.deployments.deployment2.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-deployment2
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-deployment2
+    spec:                 
+      containers:
+        - name: {{ .Release.Name }}-dp2container1
+          image: harbor.secure/repo/{{ .Values.deployments.deployment2.image.repository }}
+          imagePullPolicy: {{ .Values.deployments.deployment2.image.pullPolicy }}
+          ports:
+            - name: {{ .Values.deployments.deployment2.service.name }}
+              containerPort: {{ .Values.deployments.deployment2.service.port }}
+              protocol: {{ .Values.deployments.deployment2.service.protocol }}
+          volumeMounts:
+            - name: "mount-{{ .Values.persistentVolume.name}}"
+              mountPath: {{ .Values.deployments.deployment2.pvc.mount }}
+          resources:
+            requests:
+              cpu: "500m"   # Request 100 milliCPU (0.1 CPU)
+              memory: "1000Mi"  # Request 256 Mebibytes (MiB) of memory
+            limits:
+              cpu: "500m"   # Limit to 200 milliCPU (0.2 CPU)
+              memory: "1000Mi"  # Limit to 512 Mebibytes (MiB) of memory
+      volumes:
+        - name: "mount-{{ .Values.persistentVolume.name}}"
+          persistentVolumeClaim:
+            claimName: "{{ .Release.Name }}-{{ .Values.persistentVolume.name }}"     
+{{- end }}
