@@ -13,6 +13,19 @@ entries:
       urls:
         - assets/datacare-chart/datacare-chart-0.4.0.tgz
       version: 0.4.0
+  nvidia-rapids:
+    - annotations:
+        catalog.cattle.io/display-name: Nvidia Rapids
+      apiVersion: v2
+      appVersion: 0.1.1
+      description: A Helm chart for Kubernetes
+      digest: f392b9c25c3832f11713ed02334dec2c37872fe52d74239b4b395273140778cf
+      icon: https://avatars3.githubusercontent.com/u/17131925?v=3&s=200
+      name: nvidia-rapids
+      type: application
+      urls:
+        - assets/rapids/dask-0.1.1.tgz
+      version: 0.1.1
   automatic-1111:
     - annotations:
         catalog.cattle.io/display-name: Automatic1111
