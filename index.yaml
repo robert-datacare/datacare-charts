@@ -24,7 +24,7 @@ entries:
       name: nvidia-rapids
       type: application
       urls:
-        - assets/rapids/dask-0.2.1.tgz
+        - assets/rapids/rapids-0.2.1.tgz
       version: 0.2.1
   automatic-1111:
     - annotations:
